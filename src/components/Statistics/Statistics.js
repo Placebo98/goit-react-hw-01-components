@@ -1,15 +1,17 @@
+import {Container, Title, List,Item} from './Statistics.styled'
+
 export function Statistics({ title, stats }) {
   return (
-    <section className="statistics">
-      <h2 className="title">Upload stats</h2>
-      <ul className="stat-list">
+    <Container >
+      <Title >Upload stats</Title>
+      <List >
         {stats.map(item => (
-          <li className="item" key={item.id}>
-            <span className="label">{item.label}</span>
-            <span className="percentage">{item.percentage}%</span>
-          </li>
+          <Item  key={item.id}>
+            <span >{item.label}</span>
+            <span >{item.percentage}%</span>
+          </Item>
         ))}
-      </ul>
-    </section>
+      </List>
+    </Container>
   );
 }
